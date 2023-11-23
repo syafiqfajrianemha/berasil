@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Berasil</string>
+
+    <string name="title_home">Beranda</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_profile">Profil</string>
 </resources>
