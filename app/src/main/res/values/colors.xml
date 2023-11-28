@@ -61,4 +61,26 @@
     <color name="md_theme_dark_surfaceTint">#91DB2A</color>
     <color name="md_theme_dark_outlineVariant">#44483D</color>
     <color name="md_theme_dark_scrim">#000000</color>
+    <color name="primary">#F9FAFB</color>
+    <color name="secondary">#F3F4F6</color>
+    <color name="base200">#E5E7EB</color>
+    <color name="base300">#D1D5DB</color>
+    <color name="base400">#9CA3AF</color>
+    <color name="base500">#6B7280</color>
+    <color name="base600">#4B5563</color>
+    <color name="base700">#374151</color>
+    <color name="base800">#1F2937</color>
+    <color name="base900">#111827</color>
+    <color name="base950">#030712</color>
+    <color name="primary50">#F7FEE7</color>
+    <color name="primary100">#ECFCCB</color>
+    <color name="primary200">#D9F99D</color>
+    <color name="primary300">#BEF264</color>
+    <color name="primary400">#A3E635</color>
+    <color name="primary500">#84CC16</color>
+    <color name="primary600">#65A30D</color>
+    <color name="primary700">#4D7C0F</color>
+    <color name="primary800">#3F6212</color>
+    <color name="primary900">#365314</color>
+    <color name="primary950">#1A2E05</color>
 </resources>

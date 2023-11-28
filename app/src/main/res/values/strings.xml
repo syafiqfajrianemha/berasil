@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Berasil</string>
-
+    <string name="text_welcome">Selamat datang di Berasil</string>
+    <string name="text_description">Identifikasi kualitas beras putih Anda dengan efektif dan efisien</string>
+    <string name="sign_in">Masuk</string>
+    <string name="sign_up">Daftar</string>
+    <string name="privacy_policy">Dengan masuk atau mendaftar, Anda setuju dengan\nKetentuan Layanan dan Kebijakan Privasi kami.</string>
     <string name="title_home">Beranda</string>
     <string name="title_history">Riwayat</string>
     <string name="title_profile">Profil</string>
+    <string name="logo_app">logo aplikasi</string>
 </resources>
