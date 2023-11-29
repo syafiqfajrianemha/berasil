@@ -7,4 +7,10 @@
     <string name="text_identification">Identifikasi kualitas beras putih Anda dengan efektif dan efisien</string>
     <string name="login">Masuk</string>
     <string name="register">Daftar</string>
+    <string name="text_meet_again">Senang Bisa Bertemu Kembali</string>
+    <string name="text_enter_your_account">Masukkan informasi akun Anda untuk memulai kembali</string>
+    
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="dont_have_account">Belum punya akun?</string>
 </resources>
