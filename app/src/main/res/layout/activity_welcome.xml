@@ -16,7 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="63dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/logo_icon"
             android:elevation="2dp"
@@ -28,21 +28,33 @@
         <View
             android:id="@+id/bg_view"
             android:layout_width="0dp"
-            android:layout_height="150dp"
+            android:layout_height="448dp"
             android:background="@drawable/bg_primary500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-9dp"
+            android:contentDescription="@string/image_illustration"
+            android:elevation="2dp"
+            android:src="@drawable/illustration_welcome"
+            app:layout_constraintBottom_toBottomOf="@+id/bg_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tv_welcoming"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="27dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/sf_pro_text_bold"
-            android:gravity="center"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="3sp"
             android:text="@string/welcoming"
             android:textAppearance="@style/heading5"
             app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +68,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/sf_pro_text_regular"
-            android:gravity="center"
+            android:gravity="center_horizontal|top"
+            android:lineSpacingExtra="2sp"
             android:text="@string/text_identification"
             android:textAppearance="@style/text_base"
             android:textColor="@color/base500"
@@ -71,8 +84,9 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/primary500"
+            android:backgroundTint="@drawable/button_state_colors"
             android:fontFamily="@font/sf_pro_text_semibold"
+            android:lineSpacingExtra="2sp"
             android:text="@string/login"
             android:textAllCaps="false"
             android:textAppearance="@style/text_base"
@@ -82,19 +96,24 @@
 
         <Button
             android:id="@+id/button_register"
+            style="?attr/materialButtonOutlinedStyle"
             android:layout_width="0dp"
             android:layout_height="64dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:backgroundTint="@color/primary500"
             android:fontFamily="@font/sf_pro_text_semibold"
+            android:lineSpacingExtra="2sp"
             android:text="@string/register"
             android:textAllCaps="false"
             android:textAppearance="@style/text_base"
+            android:textColor="@color/primary800"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_login" />
+            app:layout_constraintTop_toBottomOf="@+id/button_login"
+            app:rippleColor="@color/secondary"
+            app:strokeColor="@color/primary800"
+            app:strokeWidth="2dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

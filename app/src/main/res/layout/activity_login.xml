@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/sf_pro_text_bold"
+            android:lineSpacingExtra="-3sp"
             android:text="@string/text_meet_again"
             android:textAppearance="@style/heading2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +30,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_pro_text_regular"
+            android:lineSpacingExtra="2sp"
             android:text="@string/text_enter_your_account"
             android:textAppearance="@style/text_base"
             app:layout_constraintEnd_toEndOf="parent"
@@ -42,13 +44,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:textColorHint="@color/base500"
+            app:boxStrokeColor="@color/primary500"
+            app:cursorColor="@color/base500"
+            app:hintTextColor="@color/base500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_enter_your_account"
             app:startIconDrawable="@drawable/ic_email">
 
             <com.berasil.customview.EditTextEmail
-                android:id="@+id/ed_email"
+                android:id="@+id/ed_login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
@@ -62,14 +67,18 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textColorHint="@color/base500"
+            app:boxStrokeColor="@color/primary500"
+            app:cursorColor="@color/base500"
             app:endIconMode="password_toggle"
+            app:endIconTint="@color/base500"
+            app:hintTextColor="@color/base500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email_layout"
             app:startIconDrawable="@drawable/ic_lock">
 
             <com.berasil.customview.EditTextPassword
-                android:id="@+id/ed_password"
+                android:id="@+id/ed_login_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
@@ -77,11 +86,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button_login"
+            android:id="@+id/login_button"
             android:layout_width="0dp"
             android:layout_height="64dp"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/primary500"
+            android:backgroundTint="@drawable/button_state_colors"
+            android:enabled="false"
             android:fontFamily="@font/sf_pro_text_semibold"
             android:text="@string/login"
             android:textAllCaps="false"
@@ -96,18 +106,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="16dp"
+            android:lineSpacingExtra="-1sp"
             android:text="@string/dont_have_account"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_register"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_login" />
+            app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
         <TextView
             android:id="@+id/button_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
+            android:lineSpacingExtra="-1sp"
             android:text="@string/register"
             android:textColor="@color/primary500"
             app:layout_constraintBottom_toBottomOf="@+id/tv_dont_have_account"

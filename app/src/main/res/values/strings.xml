@@ -12,10 +12,11 @@
 
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="dont_have_account">Belum punya akun?</string>
+    <string name="dont_have_account">Belum memiliki akun?</string>
     <string name="username">Username</string>
 
-    <string name="have_account">Sudah punya akun?</string>
+    <string name="have_account">Sudah memiliki akun?</string>
     <string name="text_create_account">Silahkan Buat Akun Anda</string>
     <string name="text_insert_data">Masukkan data akun Anda untuk mendaftar</string>
+    <string name="image_illustration">Image Illustration</string>
 </resources>
