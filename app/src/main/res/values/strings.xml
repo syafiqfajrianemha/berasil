@@ -9,8 +9,13 @@
     <string name="register">Daftar</string>
     <string name="text_meet_again">Senang Bisa Bertemu Kembali</string>
     <string name="text_enter_your_account">Masukkan informasi akun Anda untuk memulai kembali</string>
-    
+
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="dont_have_account">Belum punya akun?</string>
+    <string name="username">Username</string>
+
+    <string name="have_account">Sudah punya akun?</string>
+    <string name="text_create_account">Silahkan Buat Akun Anda</string>
+    <string name="text_insert_data">Masukkan data akun Anda untuk mendaftar</string>
 </resources>

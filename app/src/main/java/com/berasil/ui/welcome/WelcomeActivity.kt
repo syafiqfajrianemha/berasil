@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.berasil.databinding.ActivityWelcomeBinding
 import com.berasil.ui.login.LoginActivity
+import com.berasil.ui.register.RegisterActivity
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -18,6 +19,11 @@ class WelcomeActivity : AppCompatActivity() {
         binding.buttonLogin.setOnClickListener {
             val toLoginPage = Intent(this, LoginActivity::class.java)
             startActivity(toLoginPage)
+        }
+
+        binding.buttonRegister.setOnClickListener {
+            val toRegisterPage = Intent(this, RegisterActivity::class.java)
+            startActivity(toRegisterPage)
         }
     }
 }
