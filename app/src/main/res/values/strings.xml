@@ -19,4 +19,8 @@
     <string name="text_create_account">Silahkan Buat Akun Anda</string>
     <string name="text_insert_data">Masukkan data akun Anda untuk mendaftar</string>
     <string name="image_illustration">Image Illustration</string>
+
+    <string name="title_detection">Deteksi</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_account">Akun</string>
 </resources>
