@@ -23,4 +23,9 @@
     <string name="title_detection">Deteksi</string>
     <string name="title_history">Riwayat</string>
     <string name="title_account">Akun</string>
+
+    <string name="image_preview">Image Preview</string>
+    <string name="upload_image">Unggah Gambar</string>
+    <string name="take_image">Ambil Gambar</string>
+    <string name="detection_now">Deteksi Sekarang</string>
 </resources>
