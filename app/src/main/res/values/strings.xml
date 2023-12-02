@@ -28,4 +28,8 @@
     <string name="upload_image">Unggah Gambar</string>
     <string name="take_image">Ambil Gambar</string>
     <string name="detection_now">Deteksi Sekarang</string>
+    <string name="info">Info</string>
+    <string name="image_result">Image Result</string>
+    <string name="premium">Premium</string>
+    <string name="date">2 Desember</string>
 </resources>

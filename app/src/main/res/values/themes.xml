@@ -11,6 +11,12 @@
         <item name="android:colorBackground">@color/secondary</item>
     </style>
 
+    <style name="toolbar_text">
+        <item name="android:fontFamily">@font/sf_pro_text_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#1E2022</item>
+    </style>
+
     <style name="heading1">
         <item name="android:textSize">40sp</item>
         <item name="android:textColor">#1E2022</item>
