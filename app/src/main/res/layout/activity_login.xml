@@ -109,13 +109,13 @@
             android:lineSpacingExtra="-1sp"
             android:text="@string/dont_have_account"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button_register"
+            app:layout_constraintEnd_toStartOf="@+id/to_register_page"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
         <TextView
-            android:id="@+id/button_register"
+            android:id="@+id/to_register_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
@@ -125,5 +125,17 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_dont_have_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_dont_have_account" />
+
+        <ProgressBar
+            android:id="@+id/progressBarLogin"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primary500"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/login_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/login_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

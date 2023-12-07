@@ -13,7 +13,7 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="dont_have_account">Belum memiliki akun?</string>
-    <string name="username">Username</string>
+    <string name="name">Name</string>
 
     <string name="have_account">Sudah memiliki akun?</string>
     <string name="text_create_account">Silahkan Buat Akun Anda</string>

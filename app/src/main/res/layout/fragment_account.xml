@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:backgroundTint="@color/primary"
-                app:cardCornerRadius="10dp">
+                app:cardCornerRadius="20dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -45,8 +45,8 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/iv_photo"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:layout_marginVertical="10dp"
                         android:layout_marginStart="10dp"
                         android:contentDescription="@string/image_result"
@@ -57,10 +57,10 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tv_username"
+                        android:id="@+id/tv_name"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginEnd="16dp"
                         android:ellipsize="end"
                         android:fontFamily="@font/sf_pro_text_bold"
@@ -68,7 +68,7 @@
                         android:maxLines="1"
                         android:text="Syafiq Fajrian Emha"
                         android:textAllCaps="true"
-                        android:textAppearance="@style/heading6"
+                        android:textAppearance="@style/text_ig"
                         app:layout_constraintBottom_toTopOf="@+id/tv_email"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/iv_photo"
@@ -80,17 +80,17 @@
                         android:id="@+id/tv_email"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginEnd="16dp"
                         android:ellipsize="end"
                         android:includeFontPadding="false"
                         android:maxLines="1"
                         android:text="syafiqfajrianemha@berasil.com"
-                        android:textAppearance="@style/text_sm"
+                        android:textAppearance="@style/text_xs"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/iv_photo"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_username"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_name"
                         app:layout_constraintVertical_bias="0.5"
                         app:layout_constraintVertical_chainStyle="packed" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -100,19 +100,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/sf_pro_text_semibold"
+                    android:text="Informasi"
+                    android:textAppearance="@style/text_base"
+                    android:textColor="@color/base950"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <Button
-                    android:id="@+id/btn_to_welcome_page"
+                    android:id="@+id/button_logout"
                     android:layout_width="0dp"
                     android:layout_height="64dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/primary500"
-                    android:text="Open Welcome Page"
-                    android:textAllCaps="false"
+                    android:fontFamily="@font/sf_pro_text_bold"
+                    android:text="Logout"
                     android:textAppearance="@style/text_ig"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 

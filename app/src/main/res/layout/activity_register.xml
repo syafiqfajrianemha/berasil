@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_meet_again" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/username_layout"
+            android:id="@+id/name_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -53,10 +53,10 @@
             app:startIconDrawable="@drawable/ic_person_outlined">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ed_register_username"
+                android:id="@+id/ed_register_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/username"
+                android:hint="@string/name"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,7 +72,7 @@
             app:hintTextColor="@color/base500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username_layout"
+            app:layout_constraintTop_toBottomOf="@+id/name_layout"
             app:startIconDrawable="@drawable/ic_email">
 
             <com.berasil.customview.EditTextEmail
@@ -132,13 +132,13 @@
             android:lineSpacingExtra="-1sp"
             android:text="@string/have_account"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button_login"
+            app:layout_constraintEnd_toStartOf="@+id/to_login_page"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/register_button" />
 
         <TextView
-            android:id="@+id/button_login"
+            android:id="@+id/to_login_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
@@ -148,5 +148,17 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_have_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_have_account" />
+
+        <ProgressBar
+            android:id="@+id/progressBarRegister"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primary500"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/register_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/register_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

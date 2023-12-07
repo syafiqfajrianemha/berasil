@@ -5,13 +5,22 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
+import android.view.View
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.berasil.databinding.ActivityLoginBinding
+import com.berasil.ui.CcViewModelFactory
+import com.berasil.ui.main.MainActivity
 import com.berasil.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+
+    private val loginViewModel by viewModels<LoginViewModel> {
+        CcViewModelFactory.getInstance(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +30,31 @@ class LoginActivity : AppCompatActivity() {
         binding.edLoginEmail.addTextChangedListener(loginTextWatcher)
         binding.edLoginPassword.addTextChangedListener(loginTextWatcher)
 
-        binding.buttonRegister.setOnClickListener {
+        loginViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+
+        loginViewModel.loginResponse.observe(this) { loginResponse ->
+            if (loginResponse.success) {
+                val toMainActivity = Intent(this, MainActivity::class.java)
+                toMainActivity.flags =
+                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(toMainActivity)
+                showToast(loginResponse.message)
+                finish()
+            } else {
+                showToast(loginResponse.message)
+            }
+        }
+
+        binding.loginButton.setOnClickListener {
+            loginViewModel.login(
+                binding.edLoginEmail.text.toString(),
+                binding.edLoginPassword.text.toString()
+            )
+        }
+
+        binding.toRegisterPage.setOnClickListener {
             val toRegisterPage = Intent(this, RegisterActivity::class.java)
             startActivity(toRegisterPage)
             finish()
@@ -45,5 +78,14 @@ class LoginActivity : AppCompatActivity() {
         override fun afterTextChanged(s: Editable) {
             // Do nothing.
         }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBarLogin.visibility = if (isLoading) View.VISIBLE else View.GONE
+        binding.loginButton.visibility = if (isLoading) View.INVISIBLE else View.VISIBLE
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

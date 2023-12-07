@@ -33,7 +33,7 @@ class EditTextEmail : AppCompatEditText {
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (!Patterns.EMAIL_ADDRESS.matcher(text.toString()).matches()) {
-                    setError("Format email harus valid.", null)
+                    setError("Format email harus valid", null)
                 } else {
                     error = null
                 }
