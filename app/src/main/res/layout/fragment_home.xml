@@ -4,122 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondary">
+    tools:context=".ui.home.HomeFragment">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/secondary"
-        tools:ignore="MissingConstraints">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="290dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:background="@color/primary500" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="283.11dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="176dp"
-            android:background="@drawable/gs_image" />
-
-        <ImageView
-            android:layout_width="37.5dp"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="63dp"
-            android:contentDescription="@string/logo_app"
-            app:srcCompat="@drawable/logo" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/linearlayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
+        android:text="Home Fragment"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/relativeLayout">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_welcome"
-            android:textAppearance="@style/heading5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/sf_pro_display_bold"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="3sp"
-            android:text="@string/text_welcome"
-            android:translationY="-1.68sp" />
-
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/text_base"
-            android:fontFamily="@font/sf_pro_text_regular"
-            android:gravity="center_horizontal|top"
-            android:lineSpacingExtra="2sp"
-            android:text="@string/text_description"
-            android:translationY="-0.99sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:orientation="vertical"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:src="@drawable/ic_history"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearlayout">
-
-        <Button
-            android:id="@+id/btn_signin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_in"
-            android:textAppearance="@style/text_base"
-            android:fontFamily="@font/sf_pro_text_semibold"
-            android:textColor="@color/primary500"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"
-            android:strokeWidth="3"
-            android:layout_gravity="center"/>
-
-        <Button
-            android:id="@+id/btn_signup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_up"
-            android:textAppearance="@style/text_base"
-            android:fontFamily="@font/sf_pro_text_semibold"
-            android:textColor="@color/primary500"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="12dp"
-            android:strokeWidth="3"
-            android:layout_gravity="center"/>
-
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/privacy_policy"
-            android:fontFamily="@font/sf_pro_text_regular"
-            android:textAppearance="@style/text_xs"
-            android:lineSpacingExtra="-1sp"
-            android:gravity="center_horizontal|center_vertical"/>
-    </LinearLayout>
-
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
