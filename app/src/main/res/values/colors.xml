@@ -22,4 +22,15 @@
     <color name="primary800">#3F6212</color>
     <color name="primary900">#365314</color>
     <color name="primary950">#1A2E05</color>
+
+    <color name="premium">#16A34A</color>
+    <color name="medium_1">#65A30D</color>
+    <color name="medium_2">#CA8A04</color>
+    <color name="bawah">#DC2626</color>
+
+    <color name="bg_premium">#CCF9DC</color>
+    <color name="bg_medium_1">#E2FAB5</color>
+    <color name="bg_medium_2">#FEF4A7</color>
+    <color name="bg_bawah">#FECACA</color>
+
 </resources>

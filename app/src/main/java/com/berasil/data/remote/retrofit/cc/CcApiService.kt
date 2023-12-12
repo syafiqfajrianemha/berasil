@@ -11,7 +11,7 @@ interface CcApiService {
     @FormUrlEncoded
     @POST("auth/register")
     suspend fun register(
-        @Field("username") name: String,
+        @Field("name") name: String,
         @Field("email") email: String,
         @Field("password") password: String
     ): RegisterResponse

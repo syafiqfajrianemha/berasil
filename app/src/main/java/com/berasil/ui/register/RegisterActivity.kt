@@ -65,12 +65,12 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-            val edRegisterUsername = binding.edRegisterName.text.toString().trim()
+            val edRegisterName = binding.edRegisterName.text.toString().trim()
             val edRegisterEmail = binding.edRegisterEmail.text.toString().trim()
             val edRegisterPassword = binding.edRegisterPassword.text.toString().trim()
 
             binding.registerButton.isEnabled =
-                edRegisterUsername.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(edRegisterEmail)
+                edRegisterName.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(edRegisterEmail)
                     .matches() && edRegisterPassword.length >= 8
         }
 

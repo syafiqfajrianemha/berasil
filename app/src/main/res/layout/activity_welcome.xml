@@ -115,5 +115,7 @@
             app:rippleColor="@color/secondary"
             app:strokeColor="@color/primary800"
             app:strokeWidth="2dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

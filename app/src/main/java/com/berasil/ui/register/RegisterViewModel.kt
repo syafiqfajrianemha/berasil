@@ -19,12 +19,12 @@ class RegisterViewModel(private val repository: CcRepository) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun register(username: String, email: String, password: String) {
+    fun register(name: String, email: String, password: String) {
         _isLoading.postValue(true)
 
         viewModelScope.launch {
             try {
-                val response = repository.register(username, email, password)
+                val response = repository.register(name, email, password)
 
                 _isLoading.postValue(false)
                 _registerResponse.postValue(response)

@@ -17,7 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.history.detail.DetailHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detection.result.ResultActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.register.RegisterActivity"
             android:exported="true" />
@@ -46,10 +51,8 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider>
-
-        <!-- Trigger Google Play services to install the backported photo picker module. -->
-        <!--suppress AndroidDomInspection -->
+        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+        <!-- suppress AndroidDomInspection -->
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"
@@ -58,11 +61,11 @@
             <intent-filter>
                 <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
             </intent-filter>
+
             <meta-data
                 android:name="photopicker_activity:0:required"
                 android:value="" />
         </service>
-
     </application>
 
 </manifest>

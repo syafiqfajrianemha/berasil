@@ -66,4 +66,44 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/base950</item>
     </style>
+
+    <style name="CardCornerRadiusTop" parent="">
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeTopRight">30dp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:background">?android:attr/listDivider</item>
+        <item name="android:backgroundTint">@color/base950</item>
+    </style>
+
+    <!-- Alert Dialog -->
+    <style name="ThemeOverlay.MaterialComponents.MaterialAlertDialog_Background" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <!-- Background Color-->
+        <item name="android:background">@color/primary</item>
+        <!-- Text Color for title and message -->
+        <item name="colorOnSurface">@color/base950</item>
+        <!-- Style for positive button -->
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <!-- Style for negative button -->
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="@style/Widget.MaterialComponents.Button">
+        <!-- text color for the button -->
+        <item name="android:textColor">@color/primary500</item>
+        <!-- Background tint for the button -->
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="@style/Widget.MaterialComponents.Button">
+        <!-- text color for the button -->
+        <item name="android:textColor">@color/primary500</item>
+        <!-- Background tint for the button -->
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
 </resources>

@@ -1,7 +1,10 @@
 package com.berasil.data.remote.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class DetectionResponse(
 
     @field:SerializedName("batu")
@@ -34,6 +37,9 @@ data class DetectionResponse(
     @field:SerializedName("sekam")
     val sekam: Int,
 
+    @field:SerializedName("total")
+    val total: Int,
+
     @field:SerializedName("url")
     val url: String
-)
+) : Parcelable

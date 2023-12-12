@@ -1,8 +1,8 @@
 package com.berasil.data.repository
 
 import androidx.lifecycle.asLiveData
-import com.berasil.data.remote.local.UserPreferences
-import com.berasil.data.remote.local.model.UserModel
+import com.berasil.data.remote.datastore.UserPreferences
+import com.berasil.data.remote.datastore.model.UserModel
 import com.berasil.data.remote.retrofit.cc.CcApiService
 
 class CcRepository private constructor(

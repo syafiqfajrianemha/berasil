@@ -1,5 +1,6 @@
 package com.berasil.ui.detection
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import com.berasil.databinding.FragmentDetectionBinding
 import com.berasil.getImageUri
 import com.berasil.reduceFileImage
 import com.berasil.ui.MlViewModelFactory
+import com.berasil.ui.detection.result.ResultActivity
 import com.berasil.uriToFile
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
@@ -58,7 +60,7 @@ class DetectionFragment : Fragment() {
             currentImageUri = uri
             showImage()
         } else {
-            showToast("No media selected")
+            showToast("Tidak ada gambar yang dipilih")
         }
     }
 
@@ -93,9 +95,12 @@ class DetectionFragment : Fragment() {
             detectionViewModel.detectionImage(file)
 
             detectionViewModel.detectionResponse.observe(viewLifecycleOwner) {
-                showToast("Kualitas Beras: Premium")
+                val toResultActivity = Intent(activity, ResultActivity::class.java)
+                toResultActivity.putExtra(ResultActivity.EXTRA_DETECTION_RESPONSE, it)
+                startActivity(toResultActivity)
+                activity?.finish()
             }
-        } ?: showToast("Pilih Gambar dulu WOY!")
+        } ?: showToast("Silakan pilih gambar terlebih dahulu")
     }
 
     private fun showImage() {
@@ -107,6 +112,8 @@ class DetectionFragment : Fragment() {
     private fun showLoading(isLoading: Boolean) {
         binding.progressBarDetection.visibility = if (isLoading) View.VISIBLE else View.GONE
         binding.buttonDetectionNow.visibility = if (isLoading) View.INVISIBLE else View.VISIBLE
+        binding.galleryButton.isEnabled = !isLoading
+        binding.cameraButton.isEnabled = !isLoading
     }
 
     private fun showToast(message: String) {

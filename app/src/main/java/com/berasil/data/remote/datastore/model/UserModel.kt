@@ -1,4 +1,4 @@
-package com.berasil.data.remote.local.model
+package com.berasil.data.remote.datastore.model
 
 data class UserModel(
     val userId: String,

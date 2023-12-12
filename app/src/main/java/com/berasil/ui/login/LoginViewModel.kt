@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.berasil.data.remote.local.model.UserModel
+import com.berasil.data.remote.datastore.model.UserModel
 import com.berasil.data.remote.response.LoginResponse
 import com.berasil.data.repository.CcRepository
 import com.google.gson.Gson

@@ -17,6 +17,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/primary"
             app:logo="@drawable/logo_text" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -32,13 +33,18 @@
                 android:id="@+id/preview_image_view"
                 android:layout_width="0dp"
                 android:layout_height="350dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_outline"
+                android:clipToOutline="true"
                 android:contentDescription="@string/image_preview"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_place_holder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:targetApi="s" />
 
             <Button
                 android:id="@+id/gallery_button"
@@ -109,12 +115,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="2dp"
-                android:indeterminateTint="@color/base950"
+                android:indeterminateTint="@color/primary500"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="@+id/button_detection_now"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/button_detection_now" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

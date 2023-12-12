@@ -3,7 +3,7 @@ package com.berasil.ui.account
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.berasil.data.remote.local.model.UserModel
+import com.berasil.data.remote.datastore.model.UserModel
 import com.berasil.data.repository.CcRepository
 import kotlinx.coroutines.launch
 

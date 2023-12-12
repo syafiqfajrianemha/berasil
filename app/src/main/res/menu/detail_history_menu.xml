@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menu_info"
-        android:icon="@drawable/ic_info"
-        android:title="@string/info"
+        android:id="@+id/menu_delete"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/delete"
         app:showAsAction="always" />
 
 </menu>

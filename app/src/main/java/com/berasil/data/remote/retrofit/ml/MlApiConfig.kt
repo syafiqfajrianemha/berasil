@@ -25,7 +25,7 @@ object MlApiConfig {
             .build()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://berasil-ml-1-xcbcfsxr5a-et.a.run.app/")
+            .baseUrl("https://berasil-ml-3-xcbcfsxr5a-et.a.run.app/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

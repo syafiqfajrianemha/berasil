@@ -28,9 +28,25 @@
     <string name="upload_image">Unggah Gambar</string>
     <string name="take_image">Ambil Gambar</string>
     <string name="detection_now">Deteksi Sekarang</string>
-    <string name="info">Info</string>
     <string name="image_result">Image Result</string>
-    <string name="premium">Premium</string>
-    <string name="date">2 Desember</string>
-    <string name="logout">Logout</string>
+
+    <string name="text_quality">Kualitas</string>
+
+    <string name="butir_kepala">Butir Kepala</string>
+    <string name="butir_patah">Butir Patah</string>
+    <string name="butir_menir">Butir Menir</string>
+    <string name="butir_merah">Butir Merah</string>
+    <string name="butir_rusak">Butir Rusak</string>
+    <string name="butir_kapur">Butir Kapur</string>
+    <string name="butir_gabah">Butir Gabah</string>
+    <string name="sekam">Sekam</string>
+    <string name="kutu">Kutu</string>
+    <string name="batu">Batu</string>
+
+    <string name="logout">Keluar</string>
+    <string name="confirmation_logout">Apakah Anda yakin ingin keluar?</string>
+    <string name="cancel">Batal</string>
+    <string name="delete">Hapus</string>
+    <string name="confirmation_delete">Apakah Anda yakin ingin menghapus riwayat ini?</string>
+    <string name="history_empty">Tidak ada riwayat satupun</string>
 </resources>
