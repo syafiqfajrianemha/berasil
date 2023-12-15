@@ -13,7 +13,7 @@
         tools:context=".ui.register.RegisterActivity">
 
         <TextView
-            android:id="@+id/tv_meet_again"
+            android:id="@+id/tv_create_account"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_enter_your_account"
+            android:id="@+id/tv_insert_data"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_pro_text_regular"
@@ -35,7 +35,7 @@
             android:textAppearance="@style/text_base"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_meet_again" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_create_account" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name_layout"
@@ -49,7 +49,7 @@
             app:hintTextColor="@color/base500"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_enter_your_account"
+            app:layout_constraintTop_toBottomOf="@+id/tv_insert_data"
             app:startIconDrawable="@drawable/ic_person_outlined">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -151,18 +151,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_have_account"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_have_account" />
-
-        <ProgressBar
-            android:id="@+id/progressBarRegister"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminateTint="@color/primary500"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/register_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/register_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

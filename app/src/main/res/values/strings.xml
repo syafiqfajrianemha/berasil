@@ -16,8 +16,8 @@
     <string name="name">Name</string>
 
     <string name="have_account">Sudah memiliki akun?</string>
-    <string name="text_create_account">Silahkan Buat Akun Anda</string>
-    <string name="text_insert_data">Masukkan data akun Anda untuk mendaftar</string>
+    <string name="text_create_account">Lengkapi Data Akun Anda</string>
+    <string name="text_insert_data">Masukkan data yang diperlukan untuk memulai mendaftar</string>
     <string name="image_illustration">Image Illustration</string>
 
     <string name="title_detection">Deteksi</string>
@@ -49,4 +49,8 @@
     <string name="delete">Hapus</string>
     <string name="confirmation_delete">Apakah Anda yakin ingin menghapus riwayat ini?</string>
     <string name="history_empty">Tidak ada riwayat satupun</string>
+
+    <string name="loading_text">Loading…</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

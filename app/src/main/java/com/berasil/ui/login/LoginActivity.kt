@@ -1,22 +1,26 @@
 package com.berasil.ui.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
-import android.widget.Toast
+import android.view.inputmethod.InputMethodManager
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.berasil.databinding.ActivityLoginBinding
+import com.berasil.helper.LoadingDialog
 import com.berasil.ui.CcViewModelFactory
 import com.berasil.ui.main.MainActivity
 import com.berasil.ui.register.RegisterActivity
+import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private val loadingDialog by lazy { LoadingDialog(this) }
 
     private val loginViewModel by viewModels<LoginViewModel> {
         CcViewModelFactory.getInstance(this)
@@ -31,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
         binding.edLoginPassword.addTextChangedListener(loginTextWatcher)
 
         loginViewModel.isLoading.observe(this) {
-            showLoading(it)
+            if (it) loadingDialog.showLoading() else loadingDialog.hideLoading()
         }
 
         loginViewModel.loginResponse.observe(this) { loginResponse ->
@@ -40,14 +44,14 @@ class LoginActivity : AppCompatActivity() {
                 toMainActivity.flags =
                     Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(toMainActivity)
-                showToast(loginResponse.message)
                 finish()
             } else {
-                showToast(loginResponse.message)
+                showSnackBarMessage(loginResponse.message)
             }
         }
 
         binding.loginButton.setOnClickListener {
+            it.hideKeyboard()
             loginViewModel.login(
                 binding.edLoginEmail.text.toString(),
                 binding.edLoginPassword.text.toString()
@@ -80,12 +84,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun showLoading(isLoading: Boolean) {
-        binding.progressBarLogin.visibility = if (isLoading) View.VISIBLE else View.GONE
-        binding.loginButton.visibility = if (isLoading) View.INVISIBLE else View.VISIBLE
+    private fun showSnackBarMessage(message: String) {
+        Snackbar.make(this, binding.tvMeetAgain, message, Snackbar.LENGTH_SHORT).show()
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun View.hideKeyboard() {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
     }
 }

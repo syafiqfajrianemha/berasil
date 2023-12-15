@@ -98,29 +98,16 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/primary500"
+                android:backgroundTint="@drawable/button_state_colors"
+                android:enabled="false"
                 android:fontFamily="@font/sf_pro_text_bold"
                 android:text="@string/detection_now"
                 android:textAllCaps="false"
                 android:textAppearance="@style/text_ig"
-                android:textColor="@color/secondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gallery_button" />
-
-            <ProgressBar
-                android:id="@+id/progressBarDetection"
-                style="?android:attr/progressBarStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="2dp"
-                android:indeterminateTint="@color/primary500"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="@+id/button_detection_now"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/button_detection_now" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -14,6 +14,9 @@ class DetectionViewModel(private val mlRepository: MlRepository) : ViewModel() {
     private val _detectionResponse = MutableLiveData<DetectionResponse>()
     val detectionResponse: LiveData<DetectionResponse> = _detectionResponse
 
+    private val _isImageUploaded = MutableLiveData<Boolean>()
+    val isImageUploaded: LiveData<Boolean> = _isImageUploaded
+
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -26,5 +29,9 @@ class DetectionViewModel(private val mlRepository: MlRepository) : ViewModel() {
             _detectionResponse.postValue(response)
             _isLoading.value = false
         }
+    }
+
+    fun setImageUploaded(isUploaded: Boolean) {
+        _isImageUploaded.value = isUploaded
     }
 }
