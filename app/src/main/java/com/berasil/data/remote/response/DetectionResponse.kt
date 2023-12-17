@@ -7,6 +7,9 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class DetectionResponse(
 
+    @field:SerializedName("error")
+    val error: Boolean,
+
     @field:SerializedName("batu")
     val batu: Int,
 

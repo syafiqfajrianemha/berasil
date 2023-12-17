@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -56,7 +57,20 @@ class ResultActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPriceChec
             intent.getParcelableExtra(EXTRA_DETECTION_RESPONSE)
         }
 
+
         if (results != null) {
+
+            if (results.error) {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+                Toast.makeText(
+                    this,
+                    "Gambar tidak terlihat seperti Beras.",
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            }
+
             val butirKepala = results.butirKepala.toString()
             val butirPatah = results.butirPatah.toString()
             val butirMenir = results.butirMenir.toString()
