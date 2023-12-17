@@ -39,7 +39,7 @@
                 android:background="@drawable/round_outline"
                 android:clipToOutline="true"
                 android:contentDescription="@string/image_preview"
-                android:scaleType="fitCenter"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_place_holder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

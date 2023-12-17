@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -13,11 +14,12 @@ import com.berasil.R
 import com.berasil.data.local.entity.ResultDetection
 import com.berasil.databinding.ActivityDetailHistoryBinding
 import com.berasil.ui.BerasilViewModelFactory
+import com.berasil.ui.price.DialogCheckPriceFragment
 import com.berasil.ui.history.HistoryViewModel
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
-class DetailHistoryActivity : AppCompatActivity() {
+class DetailHistoryActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPriceCheckedListener {
 
     private lateinit var binding: ActivityDetailHistoryBinding
 
@@ -100,13 +102,28 @@ class DetailHistoryActivity : AppCompatActivity() {
                 tvButirKepala.text = butirKepala
                 tvButirPatah.text = butirPatah
                 tvButirMenir.text = butirMenir
-                tvButirMerah.text = butirMerah
-                tvButirRusak.text = butirRusak
-                tvButirKapur.text = butirKapur
-                tvButirGabah.text = butirGabah
-                tvSekam.text = sekam
-                tvKutu.text = kutu
-                tvBatu.text = batu
+
+                var isDetail = false
+
+                btnDetail.setOnClickListener {
+                    isDetail = !isDetail
+
+                    if (isDetail) {
+                        btnDetail.setIconResource(R.drawable.ic_arrow_drop_up)
+                        showDetail()
+
+                        tvButirMerah.text = butirMerah
+                        tvButirRusak.text = butirRusak
+                        tvButirKapur.text = butirKapur
+                        tvButirGabah.text = butirGabah
+                        tvSekam.text = sekam
+                        tvKutu.text = kutu
+                        tvBatu.text = batu
+                    } else {
+                        btnDetail.setIconResource(R.drawable.ic_arrow_drop_down)
+                        hideDetail()
+                    }
+                }
             }
 
             addMenuProvider(object : MenuProvider {
@@ -125,6 +142,55 @@ class DetailHistoryActivity : AppCompatActivity() {
                     }
                 }
             })
+        }
+
+        binding.btnCheckPrice.setOnClickListener {
+            val dialogFragment = DialogCheckPriceFragment(results?.quality!!)
+            dialogFragment.setOnPriceCheckedListener(this)
+            dialogFragment.show(
+                supportFragmentManager,
+                DialogCheckPriceFragment::class.java.simpleName
+            )
+        }
+    }
+
+    private fun hideDetail() {
+        binding.apply {
+            textView4.visibility = View.GONE
+            textView5.visibility = View.GONE
+            textView6.visibility = View.GONE
+            textView7.visibility = View.GONE
+            textView8.visibility = View.GONE
+            textView9.visibility = View.GONE
+            textView10.visibility = View.GONE
+
+            tvButirMerah.visibility = View.GONE
+            tvButirRusak.visibility = View.GONE
+            tvButirKapur.visibility = View.GONE
+            tvButirGabah.visibility = View.GONE
+            tvSekam.visibility = View.GONE
+            tvKutu.visibility = View.GONE
+            tvBatu.visibility = View.GONE
+        }
+    }
+
+    private fun showDetail() {
+        binding.apply {
+            textView4.visibility = View.VISIBLE
+            textView5.visibility = View.VISIBLE
+            textView6.visibility = View.VISIBLE
+            textView7.visibility = View.VISIBLE
+            textView8.visibility = View.VISIBLE
+            textView9.visibility = View.VISIBLE
+            textView10.visibility = View.VISIBLE
+
+            tvButirMerah.visibility = View.VISIBLE
+            tvButirRusak.visibility = View.VISIBLE
+            tvButirKapur.visibility = View.VISIBLE
+            tvButirGabah.visibility = View.VISIBLE
+            tvSekam.visibility = View.VISIBLE
+            tvKutu.visibility = View.VISIBLE
+            tvBatu.visibility = View.VISIBLE
         }
     }
 
@@ -146,7 +212,12 @@ class DetailHistoryActivity : AppCompatActivity() {
             .show()
     }
 
+    override fun onPriceChecked(price: String) {
+        binding.tvPrice.text = "$price/kg"
+    }
+
     companion object {
         const val EXTRA_HISTORY = "extra_history"
+        const val EXTRA_CHECK_PRICE = "extra_check_price"
     }
 }

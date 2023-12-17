@@ -56,14 +56,133 @@
                     tools:src="@drawable/img_rice"
                     tools:targetApi="s" />
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/iv_result">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="16dp">
+
+                        <TextView
+                            android:id="@+id/textView0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/text_quality"
+                            android:textAppearance="@style/text_base"
+                            android:textColor="@color/base500"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_quality"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/round_outline"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/sf_pro_text_bold"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="5dp"
+                            android:textAppearance="@style/text_ig"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView0"
+                            tools:backgroundTint="@color/bg_premium"
+                            tools:text="Premium"
+                            tools:textColor="@color/premium" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewRight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@id/iv_result">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="16dp">
+
+                        <TextView
+                            android:id="@+id/text_market_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sf_pro_text_regular"
+                            android:includeFontPadding="false"
+                            android:text="@string/text_market_price"
+                            android:textAppearance="@style/text_base"
+                            android:textColor="@color/base500"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/round_outline"
+                            android:backgroundTint="@color/secondary"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/sf_pro_text_bold"
+                            android:includeFontPadding="false"
+                            android:maxLines="1"
+                            android:paddingHorizontal="20dp"
+                            android:paddingVertical="5dp"
+                            android:text="@string/default_price"
+                            android:textAppearance="@style/text_ig"
+                            android:textColor="@color/base600"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_market_price" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/primary"
-                app:cardElevation="20dp"
                 app:shapeAppearanceOverlay="@style/CardCornerRadiusTop">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -72,72 +191,79 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/textView0"
+                        android:id="@+id/tv_ikhtisar_eteksi"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/sf_pro_text_semibold"
                         android:includeFontPadding="false"
-                        android:text="@string/text_quality"
-                        android:textAllCaps="true"
-                        android:textAppearance="@style/text_xs"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/tv_quality"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="3dp"
-                        android:background="@drawable/round_outline"
-                        android:fontFamily="@font/sf_pro_display_bold"
-                        android:includeFontPadding="false"
-                        android:paddingHorizontal="20dp"
-                        android:paddingVertical="5dp"
-                        android:textAppearance="@style/heading5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView0"
-                        tools:backgroundTint="@color/bg_premium"
-                        tools:text="Premium"
-                        tools:textColor="@color/premium" />
-
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:text="@string/butir_kepala"
+                        android:text="@string/ikhtisar_deteksi"
                         android:textAppearance="@style/text_ig"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_detail"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_quality" />
+                        app:layout_constraintTop_toTopOf="@+id/btn_detail" />
 
-                    <TextView
-                        android:id="@+id/tv_butir_kepala"
-                        android:layout_width="0dp"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_detail"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
-                        app:layout_constraintBottom_toBottomOf="@+id/textView1"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:includeFontPadding="false"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        android:padding="6dp"
+                        android:text="@string/text_detail"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/text_sm"
+                        android:textColor="@color/base500"
+                        app:icon="@drawable/ic_arrow_drop_down"
+                        app:iconGravity="end"
+                        app:iconPadding="0dp"
+                        app:iconTint="@color/base500"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/textView1"
-                        tools:text="4" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:rippleColor="@color/base500" />
 
                     <View
+                        android:id="@+id/view"
                         style="@style/Divider"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+                        app:layout_constraintTop_toBottomOf="@+id/btn_detail" />
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:text="@string/butir_kepala"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_detail" />
+
+                    <TextView
+                        android:id="@+id/tv_butir_kepala"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/textView1"
+                        tools:text="4" />
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/butir_patah"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView1" />
 
@@ -145,28 +271,22 @@
                         android:id="@+id/tv_butir_patah"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
                         app:layout_constraintBottom_toBottomOf="@+id/textView2"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView2"
                         tools:text="1" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/butir_menir"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -174,28 +294,23 @@
                         android:id="@+id/tv_butir_menir"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
                         app:layout_constraintBottom_toBottomOf="@+id/textView3"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView3"
                         tools:text="0" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/butir_merah"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -203,28 +318,24 @@
                         android:id="@+id/tv_butir_merah"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView4"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView4"
                         tools:text="2" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/butir_rusak"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -232,28 +343,24 @@
                         android:id="@+id/tv_butir_rusak"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView5"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView5"
                         tools:text="3" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
                     <TextView
                         android:id="@+id/textView6"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/butir_kapur"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -261,28 +368,24 @@
                         android:id="@+id/tv_butir_kapur"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView6"
                         tools:text="3" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
                     <TextView
                         android:id="@+id/textView7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/butir_gabah"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -290,28 +393,24 @@
                         android:id="@+id/tv_butir_gabah"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView7"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView7"
                         tools:text="3" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/sekam"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -319,28 +418,24 @@
                         android:id="@+id/tv_sekam"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView8"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView8"
                         tools:text="4" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
                     <TextView
                         android:id="@+id/textView9"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/kutu"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
@@ -348,28 +443,24 @@
                         android:id="@+id/tv_kutu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView9"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView9"
                         tools:text="0" />
 
-                    <View
-                        style="@style/Divider"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
                     <TextView
                         android:id="@+id/textView10"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:fontFamily="@font/sf_pro_text_regular"
                         android:text="@string/batu"
-                        android:textAppearance="@style/text_ig"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -377,12 +468,29 @@
                         android:id="@+id/tv_batu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/sf_pro_text_semibold"
-                        android:textAppearance="@style/heading6"
+                        android:fontFamily="@font/sf_pro_text_regular"
+                        android:textAppearance="@style/text_base"
+                        android:textColor="@color/base500"
+                        android:visibility="gone"
                         app:layout_constraintBottom_toBottomOf="@+id/textView10"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/textView10"
                         tools:text="0" />
+
+                    <Button
+                        android:id="@+id/btn_check_price"
+                        android:layout_width="0dp"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTint="@drawable/button_state_colors"
+                        android:drawableTint="@color/primary"
+                        android:fontFamily="@font/sf_pro_text_semibold"
+                        android:text="@string/update_market_price"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/text_base"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -51,6 +51,57 @@
     <string name="history_empty">Tidak ada riwayat satupun</string>
 
     <string name="loading_text">Loading…</string>
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_market_price">Harga Pasar</string>
+    <string name="update_market_price">Update Harga Pasar</string>
+    <string name="text_detail">Detail</string>
+    <string name="ikhtisar_deteksi">Ikhtisar Deteksi</string>
+    <string name="default_price">Rp0/kg</string>
+    <string name="informasi_tambahan">Informasi Tambahan</string>
+    <string name="segmentasi_pasar">Segmentasi Pasar</string>
+    <string name="location">Lokasi</string>
+    <string name="next">Lanjut</string>
+
+    <string-array name="priceType">
+        <item>Pasar tradisional</item>
+        <item>Pasar Modern</item>
+        <item>Pedagang Pasar</item>
+        <item>Produsen</item>
+    </string-array>
+
+    <string-array name="provId">
+        <item>Aceh</item>
+        <item>Sumatera Utara</item>
+        <item>Sumatera Barat</item>
+        <item>Riau</item>
+        <item>Kepulauan Riau</item>
+        <item>Jambi</item>
+        <item>Bengkulu</item>
+        <item>Sumatera Selatan</item>
+        <item>Kepulauan Bangka Belitung</item>
+        <item>Lampung</item>
+        <item>Banten</item>
+        <item>Jawa Barat</item>
+        <item>DKI Jakarta</item>
+        <item>Jawa Tengah</item>
+        <item>DI Yogyakarta</item>
+        <item>Jawa Timur</item>
+        <item>Bali</item>
+        <item>NTB</item>
+        <item>NTT</item>
+        <item>Kalimantan Barat</item>
+        <item>Kalimantan Selatan</item>
+        <item>Kalimantan Tengah</item>
+        <item>Kalimantan Timur</item>
+        <item>Kalimantan Utara</item>
+        <item>Gorontalo</item>
+        <item>Sulawesi Selatan</item>
+        <item>Sulawesi Tenggara</item>
+        <item>Sulawesi Tengah</item>
+        <item>Sulawesi Utara</item>
+        <item>Sulawesi Barat</item>
+        <item>Maluku</item>
+        <item>Maluku Utara</item>
+        <item>Papua</item>
+        <item>Papua Barat</item>
+    </string-array>
 </resources>
