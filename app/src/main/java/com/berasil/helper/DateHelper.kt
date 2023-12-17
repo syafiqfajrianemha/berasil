@@ -14,7 +14,7 @@ object DateHelper {
     }
 
     fun getYesterdayDate(): String {
-        val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
+        val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.ENGLISH)
         val currentDate = Calendar.getInstance()
         currentDate.add(Calendar.DAY_OF_MONTH, -1)
         val yesterdayDate = currentDate.time
