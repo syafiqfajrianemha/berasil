@@ -1,5 +1,7 @@
 package com.berasil.ui.price
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,6 +32,8 @@ class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogF
         BiViewModelFactory.getInstance()
     }
 
+    private lateinit var sharedPref: SharedPreferences
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,6 +44,8 @@ class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogF
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        sharedPref = requireActivity().getPreferences(Context.MODE_PRIVATE)
 
         val priceType = resources.getStringArray(R.array.priceType)
         val adapterPriceType = ArrayAdapter(
@@ -58,12 +64,18 @@ class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogF
                     id: Long
                 ) {
                     priceTypeValue = position + 1
+                    saveSelectedValue("priceType", priceTypeValue!!)
                 }
 
                 override fun onNothingSelected(p0: AdapterView<*>?) {
                     binding.buttonCheckPrice.isEnabled = false
                 }
             }
+
+        val savedPriceType = sharedPref.getInt("priceType", -1)
+        if (savedPriceType != -1) {
+            binding.spinnerPriceType.setSelection(savedPriceType - 1)
+        }
 
         val provId = resources.getStringArray(R.array.provId)
         val adapterProvId = ArrayAdapter(
@@ -81,11 +93,17 @@ class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogF
                 id: Long
             ) {
                 provIdValue = position + 1
+                saveSelectedValue("provId", provIdValue!!)
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 binding.buttonCheckPrice.isEnabled = false
             }
+        }
+
+        val savedProvId = sharedPref.getInt("provId", -1)
+        if (savedProvId != -1) {
+            binding.spinnerProvId.setSelection(savedProvId - 1)
         }
 
         when (quality) {
@@ -123,6 +141,13 @@ class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogF
                 priceListener?.onPriceChecked(price)
                 dialog?.dismiss()
             }
+        }
+    }
+
+    private fun saveSelectedValue(key: String, value: Int) {
+        with(sharedPref.edit()) {
+            putInt(key, value)
+            apply()
         }
     }
 
