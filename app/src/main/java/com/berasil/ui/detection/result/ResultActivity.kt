@@ -59,7 +59,6 @@ class ResultActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPriceChec
 
 
         if (results != null) {
-
             if (results.error) {
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
@@ -67,120 +66,131 @@ class ResultActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPriceChec
                     this,
                     "Gambar tidak terlihat seperti Beras.",
                     Toast.LENGTH_LONG
-                )
-                    .show()
-            }
+                ).show()
+            } else {
+                val butirKepala = results.butirKepala.toString()
+                val butirPatah = results.butirPatah.toString()
+                val butirMenir = results.butirMenir.toString()
+                val butirMerah = results.butirMerah.toString()
+                val butirRusak = results.butirRusak.toString()
+                val butirKapur = results.butirKapur.toString()
+                val butirGabah = results.butirGabah.toString()
+                val sekam = results.sekam.toString()
+                val kutu = results.kutu.toString()
+                val batu = results.batu.toString()
+                val total = results.total.toString()
+                val url = results.url
 
-            val butirKepala = results.butirKepala.toString()
-            val butirPatah = results.butirPatah.toString()
-            val butirMenir = results.butirMenir.toString()
-            val butirMerah = results.butirMerah.toString()
-            val butirRusak = results.butirRusak.toString()
-            val butirKapur = results.butirKapur.toString()
-            val butirGabah = results.butirGabah.toString()
-            val sekam = results.sekam.toString()
-            val kutu = results.kutu.toString()
-            val batu = results.batu.toString()
-            val total = results.total.toString()
-            val url = results.url
+                binding.apply {
+                    Glide.with(this@ResultActivity)
+                        .load(url)
+                        .transition(DrawableTransitionOptions.withCrossFade())
+                        .into(ivResult)
 
-            binding.apply {
-                Glide.with(this@ResultActivity)
-                    .load(url)
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .into(ivResult)
-
-                quality = detectionQuality(
-                    butirKepala.toFloat(),
-                    butirPatah.toFloat(),
-                    butirMenir.toFloat(),
-                    butirMerah.toFloat(),
-                    butirRusak.toFloat(),
-                    butirKapur.toFloat(),
-                    butirGabah.toFloat(),
-                    sekam.toFloat(),
-                    kutu.toFloat(),
-                    batu.toFloat()
-                )
-
-                tvQuality.text = quality
-
-                when (quality) {
-                    "Premium" -> {
-                        tvQuality.setTextColor(getColor(R.color.premium))
-                        tvQuality.backgroundTintList =
-                            ContextCompat.getColorStateList(applicationContext, R.color.bg_premium)
-                    }
-
-                    "Medium 1" -> {
-                        tvQuality.setTextColor(getColor(R.color.medium_1))
-                        tvQuality.backgroundTintList =
-                            ContextCompat.getColorStateList(applicationContext, R.color.bg_medium_1)
-                    }
-
-                    "Medium 2" -> {
-                        tvQuality.setTextColor(getColor(R.color.medium_2))
-                        tvQuality.backgroundTintList =
-                            ContextCompat.getColorStateList(applicationContext, R.color.bg_medium_2)
-                    }
-
-                    else -> {
-                        tvQuality.setTextColor(getColor(R.color.bawah))
-                        tvQuality.backgroundTintList =
-                            ContextCompat.getColorStateList(applicationContext, R.color.bg_bawah)
-                    }
-                }
-
-                tvButirKepala.text = butirKepala
-                tvButirPatah.text = butirPatah
-                tvButirMenir.text = butirMenir
-                tvButirMerah.text = butirMerah
-                tvButirRusak.text = butirRusak
-                tvButirKapur.text = butirKapur
-                tvButirGabah.text = butirGabah
-                tvSekam.text = sekam
-                tvKutu.text = kutu
-                tvBatu.text = batu
-
-                resultViewModel.insertResult(
-                    ResultDetection(
-                        null,
-                        quality,
-                        DateHelper.getCurrentDate(),
-                        butirKepala,
-                        butirPatah,
-                        butirMenir,
-                        butirMerah,
-                        butirRusak,
-                        butirKapur,
-                        butirGabah,
-                        sekam,
-                        kutu,
-                        batu,
-                        total,
-                        url
+                    quality = detectionQuality(
+                        butirKepala.toFloat(),
+                        butirPatah.toFloat(),
+                        butirMenir.toFloat(),
+                        butirMerah.toFloat(),
+                        butirRusak.toFloat(),
+                        butirKapur.toFloat(),
+                        butirGabah.toFloat(),
+                        sekam.toFloat(),
+                        kutu.toFloat(),
+                        batu.toFloat()
                     )
-                )
 
-                var isDetail = false
+                    tvQuality.text = quality
 
-                btnDetail.setOnClickListener {
-                    isDetail = !isDetail
+                    when (quality) {
+                        "Premium" -> {
+                            tvQuality.setTextColor(getColor(R.color.premium))
+                            tvQuality.backgroundTintList =
+                                ContextCompat.getColorStateList(
+                                    applicationContext,
+                                    R.color.bg_premium
+                                )
+                        }
 
-                    if (isDetail) {
-                        btnDetail.setIconResource(R.drawable.ic_arrow_drop_up)
-                        showDetail()
+                        "Medium 1" -> {
+                            tvQuality.setTextColor(getColor(R.color.medium_1))
+                            tvQuality.backgroundTintList =
+                                ContextCompat.getColorStateList(
+                                    applicationContext,
+                                    R.color.bg_medium_1
+                                )
+                        }
 
-                        tvButirMerah.text = butirMerah
-                        tvButirRusak.text = butirRusak
-                        tvButirKapur.text = butirKapur
-                        tvButirGabah.text = butirGabah
-                        tvSekam.text = sekam
-                        tvKutu.text = kutu
-                        tvBatu.text = batu
-                    } else {
-                        btnDetail.setIconResource(R.drawable.ic_arrow_drop_down)
-                        hideDetail()
+                        "Medium 2" -> {
+                            tvQuality.setTextColor(getColor(R.color.medium_2))
+                            tvQuality.backgroundTintList =
+                                ContextCompat.getColorStateList(
+                                    applicationContext,
+                                    R.color.bg_medium_2
+                                )
+                        }
+
+                        else -> {
+                            tvQuality.setTextColor(getColor(R.color.bawah))
+                            tvQuality.backgroundTintList =
+                                ContextCompat.getColorStateList(
+                                    applicationContext,
+                                    R.color.bg_bawah
+                                )
+                        }
+                    }
+
+                    tvButirKepala.text = butirKepala
+                    tvButirPatah.text = butirPatah
+                    tvButirMenir.text = butirMenir
+                    tvButirMerah.text = butirMerah
+                    tvButirRusak.text = butirRusak
+                    tvButirKapur.text = butirKapur
+                    tvButirGabah.text = butirGabah
+                    tvSekam.text = sekam
+                    tvKutu.text = kutu
+                    tvBatu.text = batu
+
+                    resultViewModel.insertResult(
+                        ResultDetection(
+                            null,
+                            quality,
+                            DateHelper.getCurrentDate(),
+                            butirKepala,
+                            butirPatah,
+                            butirMenir,
+                            butirMerah,
+                            butirRusak,
+                            butirKapur,
+                            butirGabah,
+                            sekam,
+                            kutu,
+                            batu,
+                            total,
+                            url
+                        )
+                    )
+
+                    var isDetail = false
+
+                    btnDetail.setOnClickListener {
+                        isDetail = !isDetail
+
+                        if (isDetail) {
+                            btnDetail.setIconResource(R.drawable.ic_arrow_drop_up)
+                            showDetail()
+
+                            tvButirMerah.text = butirMerah
+                            tvButirRusak.text = butirRusak
+                            tvButirKapur.text = butirKapur
+                            tvButirGabah.text = butirGabah
+                            tvSekam.text = sekam
+                            tvKutu.text = kutu
+                            tvBatu.text = batu
+                        } else {
+                            btnDetail.setIconResource(R.drawable.ic_arrow_drop_down)
+                            hideDetail()
+                        }
                     }
                 }
             }
