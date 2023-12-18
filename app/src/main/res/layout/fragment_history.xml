@@ -38,21 +38,35 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:listitem="@layout/result_item" />
 
-            <TextView
-                android:id="@+id/history_empty"
+            <ImageView
+                android:id="@+id/iv_no_data"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/sf_pro_text_regular"
-                android:text="@string/history_empty"
-                android:textAppearance="@style/text_sm"
+                android:layout_marginTop="32dp"
+                android:contentDescription="@string/image_view_no_data"
+                android:src="@drawable/no_data"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:visibility="visible" />
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/history_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/sf_pro_text_regular"
+                android:maxLines="1"
+                android:text="@string/history_empty"
+                android:textAppearance="@style/text_base"
+                android:textColor="@color/base950"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_no_data" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

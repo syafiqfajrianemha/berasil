@@ -14,8 +14,8 @@ import com.berasil.R
 import com.berasil.data.local.entity.ResultDetection
 import com.berasil.databinding.ActivityDetailHistoryBinding
 import com.berasil.ui.BerasilViewModelFactory
-import com.berasil.ui.price.DialogCheckPriceFragment
 import com.berasil.ui.history.HistoryViewModel
+import com.berasil.ui.price.DialogCheckPriceFragment
 import com.bumptech.glide.Glide
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -134,7 +134,7 @@ class DetailHistoryActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPr
                 override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                     return when (menuItem.itemId) {
                         R.id.menu_delete -> {
-                            showLogoutDialog(results)
+                            showConfirmationDialog(results)
                             true
                         }
 
@@ -194,11 +194,8 @@ class DetailHistoryActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPr
         }
     }
 
-    private fun showLogoutDialog(data: ResultDetection) {
-        MaterialAlertDialogBuilder(
-            this,
-            R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Background
-        )
+    private fun showConfirmationDialog(data: ResultDetection) {
+        MaterialAlertDialogBuilder(this)
             .setTitle(R.string.delete)
             .setMessage(R.string.confirmation_delete)
             .setCancelable(false)

@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
+import com.berasil.R
 import com.berasil.helper.DetectionListener
 
 class ValidationDialog(
@@ -23,11 +24,11 @@ class ValidationDialog(
         builder!!.setMultiChoiceItems(data, selectedData) { _, _, _ ->
             updateNextButtonStatus()
         }
-        builder!!.setPositiveButton("Lanjut") { dialogInterface, _ ->
+        builder!!.setPositiveButton(R.string.next) { dialogInterface, _ ->
             dialogInterface.dismiss()
             detectionListener.onDetectionRequested()
         }
-        builder!!.setNegativeButton("CANCEL") { dialogInterface, _ ->
+        builder!!.setNegativeButton(R.string.cancel) { dialogInterface, _ ->
             for (i in selectedData.indices) {
                 selectedData[i] = false
             }

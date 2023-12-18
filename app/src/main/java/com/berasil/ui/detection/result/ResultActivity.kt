@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +18,7 @@ import com.berasil.ui.main.MainActivity
 import com.berasil.ui.price.DialogCheckPriceFragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class ResultActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPriceCheckedListener {
 
@@ -60,13 +60,7 @@ class ResultActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPriceChec
 
         if (results != null) {
             if (results.error) {
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-                Toast.makeText(
-                    this,
-                    "Gambar tidak terlihat seperti Beras.",
-                    Toast.LENGTH_LONG
-                ).show()
+                showDialog()
             } else {
                 val butirKepala = results.butirKepala.toString()
                 val butirPatah = results.butirPatah.toString()
@@ -324,6 +318,18 @@ class ResultActivity : AppCompatActivity(), DialogCheckPriceFragment.OnPriceChec
 
     override fun onPriceChecked(price: String) {
         binding.tvPrice.text = "$price/kg"
+    }
+
+    private fun showDialog() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Gambar tidak terlihat seperti Beras.")
+            .setMessage("Berasil fokus pada deteksi kualitas beras.")
+            .setCancelable(false)
+            .setPositiveButton("Ulangi") { _, _ ->
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
+            .show()
     }
 
     companion object {

@@ -62,6 +62,7 @@ class HistoryFragment : Fragment() {
             }
 
             if (result.isEmpty()) {
+                binding.ivNoData.visibility = View.VISIBLE
                 binding.historyEmpty.visibility = View.VISIBLE
             }
         }

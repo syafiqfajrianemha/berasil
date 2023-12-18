@@ -55,7 +55,7 @@ class AccountFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.menu_logout -> {
-                        showLogoutDialog()
+                        showConfirmationDialog()
                         true
                     }
 
@@ -65,11 +65,8 @@ class AccountFragment : Fragment() {
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
-    private fun showLogoutDialog() {
-        MaterialAlertDialogBuilder(
-            requireContext(),
-            R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Background
-        )
+    private fun showConfirmationDialog() {
+        MaterialAlertDialogBuilder(requireContext())
             .setTitle(R.string.logout)
             .setMessage(R.string.confirmation_logout)
             .setCancelable(false)

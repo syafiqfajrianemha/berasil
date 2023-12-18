@@ -44,7 +44,7 @@
     <string name="batu">Batu</string>
 
     <string name="logout">Keluar</string>
-    <string name="confirmation_logout">Apakah Anda yakin ingin keluar?</string>
+    <string name="confirmation_logout">Apakah Anda yakin ingin keluar dari aplikasi Berasil?</string>
     <string name="cancel">Batal</string>
     <string name="delete">Hapus</string>
     <string name="confirmation_delete">Apakah Anda yakin ingin menghapus riwayat ini?</string>
@@ -52,7 +52,7 @@
 
     <string name="loading_text">Loading…</string>
     <string name="text_market_price">Harga Pasar</string>
-    <string name="update_market_price">Update Harga Pasar</string>
+    <string name="update_market_price">Perbarui Harga Pasar</string>
     <string name="text_detail">Detail</string>
     <string name="ikhtisar_deteksi">Ikhtisar Deteksi</string>
     <string name="default_price">Rp0/kg</string>
@@ -60,6 +60,8 @@
     <string name="segmentasi_pasar">Segmentasi Pasar</string>
     <string name="location">Lokasi</string>
     <string name="next">Lanjut</string>
+    <string name="image_view_no_data">Image View No Data</string>
+    <string name="icon_arrow_forward">Icon Arrow Forward</string>
 
     <string-array name="priceType">
         <item>Pasar tradisional</item>

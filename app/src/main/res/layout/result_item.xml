@@ -15,10 +15,10 @@
         android:clipToOutline="true"
         android:contentDescription="@string/image_result"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_rice"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars"
         tools:targetApi="s" />
 
     <TextView
@@ -26,11 +26,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:ellipsize="end"
         android:fontFamily="@font/sf_pro_text_regular"
+        android:maxLines="1"
         android:textAppearance="@style/text_xs"
         app:layout_constraintStart_toEndOf="@+id/iv_result"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="11/12/2023 10:01:38" />
+        tools:text="11/12/2023 • 10:01:38" />
 
     <TextView
         android:id="@+id/tv_quality"
@@ -38,8 +40,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:background="@drawable/round_outline"
+        android:ellipsize="end"
         android:fontFamily="@font/sf_pro_text_semibold"
         android:includeFontPadding="false"
+        android:maxLines="1"
         android:paddingHorizontal="10dp"
         android:paddingVertical="5dp"
         android:textAppearance="@style/text_base"
@@ -54,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
+        android:contentDescription="@string/icon_arrow_forward"
         android:src="@drawable/ic_arrow_forward"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
