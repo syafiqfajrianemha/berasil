@@ -16,6 +16,7 @@ import com.berasil.helper.DateHelper
 import com.berasil.helper.LoadingDialog
 import com.berasil.ui.BiViewModelFactory
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogFragment() {
 
@@ -137,8 +138,12 @@ class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogF
             )
 
             dialogCheckPriceViewModel.ricePrice.observe(viewLifecycleOwner) {
-                val price = CurrencyFormat().rupiah(it.first().nilai.toInt())
-                priceListener?.onPriceChecked(price)
+                if (it.isNotEmpty()) {
+                    val price = CurrencyFormat().rupiah(it.first().nilai.toInt())
+                    priceListener?.onPriceChecked(price)
+                } else {
+                    showDialog()
+                }
                 dialog?.dismiss()
             }
         }
@@ -153,6 +158,17 @@ class DialogCheckPriceFragment(private var quality: String) : BottomSheetDialogF
 
     fun setOnPriceCheckedListener(listener: OnPriceCheckedListener) {
         this.priceListener = listener
+    }
+
+    private fun showDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Gagal")
+            .setMessage("Harga Pasar di Provinsi Anda Belum Tersedia dengan Segmentasi Pasar yang Anda Pilih")
+            .setCancelable(false)
+            .setPositiveButton("Tutup") { _, _ ->
+                dismiss()
+            }
+            .show()
     }
 
     interface OnPriceCheckedListener {
